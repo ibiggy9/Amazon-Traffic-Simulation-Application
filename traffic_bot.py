@@ -16,7 +16,7 @@ from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 
 class Scrape:
     def __init__(self, url):
-       
+        '''
         self.req_proxy = RequestProxy()
         self.proxies = self.req_proxy.get_proxy_list()
         self.proxy_list = []
@@ -34,7 +34,7 @@ class Scrape:
 
 
         }
-        
+        '''
         self.PATH = "/Users/main/desktop/code/scraping/chromedriver_PATH_for_selenium_ref/chromedriver"
         self.chrome_options = Options()
         self.chrome_options.headless = True
