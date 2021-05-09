@@ -38,8 +38,10 @@ class Scrape:
         self.PATH = "/Users/main/desktop/code/scraping/chromedriver_PATH_for_selenium_ref/chromedriver"
         self.chrome_options = Options()
         self.chrome_options.headless = True
-        self.chrome_options.add_argument = ("--disable-extensions")
-        self.chrome_options.add_argument = ("--disable-gpu")
+        self.chrome_options.add_argument("--disable-dev-shm-usage")
+        self.chrome_options.add_argument("--disable-extensions")
+        self.chrome_options.add_argument("--disable-gpu")
+        self.chrome_options.add_argument("--no-sandbox")
         self.driver = webdriver.Chrome(self.PATH, options=self.chrome_options)
         self.actions = ActionChains(self.driver)
         self.url = url
