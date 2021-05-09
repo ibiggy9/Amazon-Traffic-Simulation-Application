@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+import os
 import time
 from openpyxl import load_workbook
 from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
@@ -42,7 +43,7 @@ class Scrape:
         self.chrome_options.add_argument("--disable-extensions")
         self.chrome_options.add_argument("--disable-gpu")
         self.chrome_options.add_argument("--no-sandbox")
-        self.driver = webdriver.Chrome(self.PATH, options=self.chrome_options)
+        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVE_PATH"), chrome_options=self.chrome_options)
         self.actions = ActionChains(self.driver)
         self.url = url
         self.gv = None
