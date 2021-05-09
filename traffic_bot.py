@@ -43,7 +43,7 @@ class Scrape:
         self.chrome_options.add_argument("--disable-extensions")
         self.chrome_options.add_argument("--disable-gpu")
         self.chrome_options.add_argument("--no-sandbox")
-        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVE_PATH"), chrome_options=self.chrome_options)
+        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVE_PATH"))
         self.actions = ActionChains(self.driver)
         self.url = url
         self.gv = None
