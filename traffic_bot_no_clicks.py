@@ -10,6 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
+import os
 from openpyxl import load_workbook
 from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 
