@@ -63,7 +63,7 @@ class Scrape:
         
         #Variables
         self.url = url
-            self.gv = None
+        self.gv = None
 
     def get_info(self):
         #Get PDP
