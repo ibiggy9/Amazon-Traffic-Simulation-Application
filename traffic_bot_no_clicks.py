@@ -39,20 +39,21 @@ class Scrape:
         
         '''
         #Chromedriver
-        try:
-            self.chrome_options = Options()
-            self.chrome_options.headless = True
-            self.chrome_options.add_argument("--disable-dev-shm-usage")
-            self.chrome_options.add_argument("--disable-extensions")
-            self.chrome_options.add_argument("--disable-gpu")
-            self.chrome_options.add_argument("--no-sandbox")
-            self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
-            self.actions = ActionChains(self.driver)
-            self.url = url
-            self.gv = None
         
-        except:
-            pass
+        self.chrome_options = Options()
+        self.chrome_options.headless = True
+        self.chrome_options.add_argument("--disable-dev-shm-usage")
+        self.chrome_options.add_argument("--disable-extensions")
+        self.chrome_options.add_argument("--disable-gpu")
+        self.chrome_options.add_argument("--no-sandbox")
+        self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
+        self.actions = ActionChains(self.driver)
+        self.url = url
+        self.gv = None
+        self.url = url
+        self.gv = None  
+        
+        
 
         try:
             self.get_info()
