@@ -1,2 +1,2 @@
-worker: python run_no_clicks.py
+web: python run_no_clicks.py
 
