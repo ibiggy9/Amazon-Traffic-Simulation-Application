@@ -17,29 +17,8 @@ from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 
 class Scrape:
     def __init__(self, url):
-        # Proxy Server
-        '''
-        self.req_proxy = RequestProxy()
-        self.proxies = self.req_proxy.get_proxy_list()
-        self.proxy_list = []
-        for prox in self.proxies:
-            if prox.country == 'Canada':
-                self.proxy_list.append(prox)
-        self.proxy = self.proxy_list[0].get_address()
         
-        self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
-            'httpProxy': self.proxy,
-            'ftpProxy': self.proxy,
-            'sslProxy':self.proxy,
-
-            "proxyType":"MANUAL",
-
-
-        }
-        
-        '''
         #Chromedriver
-        
         self.chrome_options = Options()
         self.chrome_options.headless = True
         self.chrome_options.add_argument("--disable-dev-shm-usage")
@@ -49,22 +28,14 @@ class Scrape:
         self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
         self.actions = ActionChains(self.driver)
         self.url = url
-        self.gv = None
-        self.url = url
-        self.gv = None  
-        
-        
+        self.gv = None    
 
         try:
             self.get_info()
         
         except:
             pass
-        
-        #Variables
-        self.url = url
-        self.gv = None
-
+    
     def get_info(self):
         #Get PDP
         try:
