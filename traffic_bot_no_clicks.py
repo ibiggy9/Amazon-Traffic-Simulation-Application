@@ -18,27 +18,26 @@ from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 class Scrape:
     def __init__(self, url):
         # Proxy Server
-        try:
-            self.req_proxy = RequestProxy()
-            self.proxies = self.req_proxy.get_proxy_list()
-            self.proxy_list = []
-            for prox in self.proxies:
-                if prox.country == 'Canada':
-                    self.proxy_list.append(prox)
-            self.proxy = self.proxy_list[0].get_address()
-            
-            self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
-                'httpProxy': self.proxy,
-                'ftpProxy': self.proxy,
-                'sslProxy':self.proxy,
-
-                "proxyType":"MANUAL",
-
-
-            }
-        except: 
-            pass
+        '''
+        self.req_proxy = RequestProxy()
+        self.proxies = self.req_proxy.get_proxy_list()
+        self.proxy_list = []
+        for prox in self.proxies:
+            if prox.country == 'Canada':
+                self.proxy_list.append(prox)
+        self.proxy = self.proxy_list[0].get_address()
         
+        self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
+            'httpProxy': self.proxy,
+            'ftpProxy': self.proxy,
+            'sslProxy':self.proxy,
+
+            "proxyType":"MANUAL",
+
+
+        }
+        
+        '''
         #Chromedriver
         try:
             self.chrome_options = Options()
