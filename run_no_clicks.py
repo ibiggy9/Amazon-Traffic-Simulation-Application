@@ -57,6 +57,6 @@ def run():
             except:
                 pass
 
-for _ in range(10):
+for _ in range(1):
     t = threading.Thread(target=run)
     t.start()
