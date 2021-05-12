@@ -30,8 +30,13 @@ class Scrape:
         self.actions = ActionChains(self.driver)
         self.url = url
         self.gv = None
-        os.environ['https_proxy'] = os.environ['QUOTAGUARD_URL']
-        os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']
+        try:
+            os.environ['https_proxy'] = os.environ['QUOTAGUARD_URL']
+            os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']
+            print("Proxy Set")
+
+        except:
+            print("No Proxy Set")    
         self.hostname = socket.gethostname()
         print(self.hostname)
 
