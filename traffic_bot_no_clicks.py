@@ -28,6 +28,7 @@ class Scrape:
                 self.proxy_list.append(prox)
         random.shuffle(self.proxy_list)
         self.proxy = self.proxy_list[0].get_address()
+        print(f"Proxy is: {self.proxy} ")
         
         self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
             'httpProxy': self.proxy,
@@ -51,16 +52,7 @@ class Scrape:
         self.actions = ActionChains(self.driver)
         self.url = url
         self.gv = None
-        try:
-            os.environ['https_proxy'] = os.environ['QUOTAGUARD_URL']
-            os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']
-            print("Proxy Set")
-
-        except:
-            print("No Proxy Set")    
-        self.hostname = socket.gethostname()
-        print(self.hostname)
-
+        
         try:
             self.get_info()
         
