@@ -20,7 +20,7 @@ from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
 class Scrape:
     def __init__(self, url):
         
-        self.req_proxy = RequestProxy()
+        self.req_proxy = RequestProxy(log_level=20)
         self.proxies = self.req_proxy.get_proxy_list()
         self.proxy_list = []
         for prox in self.proxies:
