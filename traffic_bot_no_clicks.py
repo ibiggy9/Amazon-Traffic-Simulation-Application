@@ -27,7 +27,7 @@ class Scrape:
             if prox.country == 'Canada' or 'United States':
                 self.proxy_list.append(prox)
         random.shuffle(self.proxy_list)
-        self.proxy = [0](self.proxy_list.get_address())
+        self.proxy = self.proxy_list[0].get_address()
         
         self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
             'httpProxy': self.proxy,
