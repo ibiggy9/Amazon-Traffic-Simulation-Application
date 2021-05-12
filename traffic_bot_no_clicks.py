@@ -30,11 +30,8 @@ class Scrape:
         self.actions = ActionChains(self.driver)
         self.url = url
         self.gv = None
-        self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
-            'httpProxy': 'QUOTAGUARD_URL',
-            'ftpProxy': 'QUOTAGUARD_URL',
-            "proxyType":"MANUAL",
-        }   
+        os.environ['https_proxy'] = os.environ['QUOTAGUARD_URL']
+        os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']
         self.hostname = socket.gethostname()
         print(self.hostname)
 
