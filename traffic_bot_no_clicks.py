@@ -9,6 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
+import random
 import time
 import socket
 import os
@@ -25,7 +26,7 @@ class Scrape:
         for prox in self.proxies:
             if prox.country == 'Canada' or 'United States':
                 self.proxy_list.append(prox)
-        self.proxy = self.proxy_list[0].get_address()
+        self.proxy = random.choice(self.proxy_list.get_address())
         
         self.proxy_run = webdriver.DesiredCapabilities.CHROME['proxy']={
             'httpProxy': self.proxy,
