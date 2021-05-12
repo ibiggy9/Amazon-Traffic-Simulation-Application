@@ -10,6 +10,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 import time
+import socket
 import os
 from openpyxl import load_workbook
 from http_request_randomizer.requests.proxy.requestProxy import RequestProxy
@@ -30,6 +31,8 @@ class Scrape:
         self.url = url
         self.gv = None
         os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']    
+        self.hostname = socket.gethostname()
+        print(self.hostname)
 
         try:
             self.get_info()
