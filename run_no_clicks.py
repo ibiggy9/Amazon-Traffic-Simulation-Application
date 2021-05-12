@@ -29,33 +29,33 @@ def run():
     global total_views
     global failed_views
   
-    while True:     
-        for i in urls:
-            s = Scrape(i)
-            try:
-                success_rate = int((glance_view_count/total_views)*100)
-            except:
-                pass    
-            if s.gv == False:
-                failed_views += 1
-            elif s.gv == True:
-                glance_view_count += 1
-            else:
-                print("Error")
-    
-            total_views +=1
-            t2 = datetime.now()
-            
-            elapsed = t2 - t1
-            print("Glance View Report:")
-            print(f"Time Elapsed:{elapsed}")
-            print(f"Glance Views:{glance_view_count}")
-            print(f"Total Views:{total_views}")
-            print(f"Failed Views:{failed_views}")
-            try:
-                print(f'Success Rate:{success_rate}%')
-            except:
-                pass
+     
+    for i in urls:
+        s = Scrape(i)
+        try:
+            success_rate = int((glance_view_count/total_views)*100)
+        except:
+            pass    
+        if s.gv == False:
+            failed_views += 1
+        elif s.gv == True:
+            glance_view_count += 1
+        else:
+            print("Error")
+
+        total_views +=1
+        t2 = datetime.now()
+        
+        elapsed = t2 - t1
+        print("Glance View Report:")
+        print(f"Time Elapsed:{elapsed}")
+        print(f"Glance Views:{glance_view_count}")
+        print(f"Total Views:{total_views}")
+        print(f"Failed Views:{failed_views}")
+        try:
+            print(f'Success Rate:{success_rate}%')
+        except:
+            pass
 
 for _ in range(1):
     t = threading.Thread(target=run)
