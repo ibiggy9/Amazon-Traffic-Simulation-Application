@@ -28,7 +28,8 @@ class Scrape:
         self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
         self.actions = ActionChains(self.driver)
         self.url = url
-        self.gv = None    
+        self.gv = None
+        os.environ['http_proxy'] = os.environ['QUOTAGUARD_URL']    
 
         try:
             self.get_info()
