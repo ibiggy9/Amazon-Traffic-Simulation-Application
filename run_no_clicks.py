@@ -6,10 +6,10 @@ from datetime import date, datetime
 now = datetime.now()
 t1 = now
 urls = [
-    'https://www.amazon.com//Breton-Dare-Cracker-Variety-Pack/dp/B08V3XBS8Z',
-    'https://www.amazon.ca/dp/B08YGK9KWC',
-    'https://www.amazon.ca/dp/B08YGH6LHY',
-    'https://www.amazon.ca/dp/B08YGFM4SQ',
+    'http://www.amazon.com//Breton-Dare-Cracker-Variety-Pack/dp/B08V3XBS8Z',
+    'http://www.amazon.ca/dp/B08YGK9KWC',
+    'http://www.amazon.ca/dp/B08YGH6LHY',
+    'http://www.amazon.ca/dp/B08YGFM4SQ',
 ]
 glance_view_count = 0
 total_views= 0
