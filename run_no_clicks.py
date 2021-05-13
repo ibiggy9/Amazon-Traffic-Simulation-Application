@@ -60,6 +60,6 @@ def run():
                 pass
         
 
-for _ in range(10):
+for _ in range(2):
     t = threading.Thread(target=run)
     t.start()
