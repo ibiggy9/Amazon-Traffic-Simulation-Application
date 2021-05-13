@@ -1,6 +1,7 @@
 from traffic_bot_no_clicks import Scrape
 import threading
 from datetime import date, datetime
+import os
 
 
 now = datetime.now()
@@ -29,7 +30,8 @@ def run():
     global total_views
     global failed_views
   
-    while True: 
+
+    while True:
         for i in urls:
             s = Scrape(i)
             try:
@@ -56,7 +58,8 @@ def run():
                 print(f'Success Rate:{success_rate}%')
             except:
                 pass
+        
 
-for _ in range(1):
+for _ in range(10):
     t = threading.Thread(target=run)
     t.start()
